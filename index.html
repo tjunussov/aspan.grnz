@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>АРМ ЦОН - Номерные Знаки</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script>
+	
+	$(window).resize(function(evt) {
+		var $window = $(window);
+		var width = $window.width();
+		var height = $window.height();
+		var scale;
+	
+		// early exit
+		if(width >= 1920 && height >= 1080) {
+			$('.dashboard').css({'-webkit-transform': ''});
+			return;
+		}
+	
+		scale = Math.min(width/1920, height/1080);
+		$('.dashboard').css({'-webkit-transform': 'scale(' + scale + ')'});
+		
+	});
+</script>
+</head>
+<body>
+
+	<div class="dashboard">
+    	<h1 class="logo"><b>VIP</b> НОМЕРА</h1>
+        
+        	ДОСТУПНЫЕ ДЛЯ <span name="grnz.type">ФИЗИЧЕСКИХ ЛИЦ</span>
+            
+            <div class="container">
+                <znak class="many">001<r>02</r></znak>
+                <znak class="no">002<r>02</r></znak>
+                <znak class="many">003<r>02</r></znak>
+                
+                <znak>004<r>02</r></znak>
+                <znak class="no">005<r>02</r></znak>
+                <znak>006<r>08</r></znak>
+                
+                <znak>007<r>02</r></znak>
+                <znak class="none">008<r>02</r></znak>
+                <znak>009<r>02</r></znak>
+            </div>
+            
+            <h1 class="price">Цена : <b> <span name="grnz.price">1 000 000</span> ₸</b></h1>
+        
+        
+    </div>
+    
+</body>
+</html>
